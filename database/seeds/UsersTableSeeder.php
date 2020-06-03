@@ -39,8 +39,8 @@ class UsersTableSeeder extends Seeder
 
             $contents = file_get_contents($url);
             $name = substr($url, strrpos($url, '/') + 1);
-            $hash = Hash::make($name);
-            Storage::disk('public')->put('images/users/' . $hash . '.jpg', $contents);
+            $hash = 'images/users/' . Hash::make($name);
+            Storage::disk('public')->put( $hash . '.jpg', $contents);
 
 
             $users[$i] = [

@@ -14,6 +14,7 @@ class AlterUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->string('username')->unique();
             $table->text('roles')->nullable();
             $table->text('address')->nullable();
             $table->integer('city_id')->nullable();
@@ -32,6 +33,7 @@ class AlterUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn("username");
             $table->dropColumn("roles");
             $table->dropColumn("address");
             $table->dropColumn("city_id");

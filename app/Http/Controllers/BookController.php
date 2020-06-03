@@ -5,14 +5,15 @@ namespace App\Http\Controllers;
 use App\Http\Resources\Book as BookResource;
 use App\Book;
 use App\Http\Resources\Books as BookResourceCollection;
+use Illuminate\Auth\Access\Gate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller
 {
-    public function search($keywoard){
+    public function search($keyword){
         $criteria = Book::select('*')
-            ->where('title', 'LIKE',"%".$keywoard."%")
+            ->where('title', 'LIKE',"%".$keyword."%")
             ->orderBy('views', 'DESC')
             ->get();
 
@@ -146,7 +147,7 @@ class BookController extends Controller
         $book2 = \App\Book::create(
             ['title' => 'Judul 02', 'slug' => 'judul-02'],
             ['title' => 'Judul 03', 'slug' => 'judul-03']
-);
+        );
 
 // update judul buku dengan id 26
         $book = \App\Book::find(26);

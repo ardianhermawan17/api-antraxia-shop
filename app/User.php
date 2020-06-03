@@ -16,8 +16,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'username', 'roles',
-        'address', 'city_id', 'province_id', 'phone', 'avatar', 'status'
+        'name', 'email', 'password', 'username', 'roles','google_id',
+        'address', 'city_id', 'province_id', 'phone', 'avatar', 'status',
     ];
 
     /**
@@ -43,5 +43,10 @@ class User extends Authenticatable
         $this->api_token = str_random(60);
         $this->save();
         return $this->api_token;
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
     }
 }

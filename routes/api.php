@@ -19,39 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('nama', function (){
-    return 'Namaku, Larashop API';
-});
-
-Route::post('umur', function (){
-   return 17;
-});
-
-Route::get('category/{id}', function ($id) {
-    $categories = [
-        1 => 'Programming',
-        2 => 'Desain Grafis',
-        3 => 'Jaringan Komputer',
-    ];
-    $id = (int) $id;
-    if($id==0) return 'Silakan pilih kategori';
-    else return 'Anda memilih kategori <b>'.$categories[$id].'</b>';
-});
-
-// BOOK
-Route::get('/book-scaff', function () {
-    return new BookResource(\App\Book::find(1));
-});
-Route::get('book/{id}', function () {
-    return 'buku angka';
-})->where('id','[0-9]+');
-
-Route::get('book/{title}', function ($title) {
-    return 'buku abjad';
-})->where('title', '[A-Za-z]+');
-
-
-
 //ROute test
 
 //Route::get('test',function (){
@@ -75,6 +42,8 @@ Route::middleware(['throttle:10,1','cors'])->group(function () {
 
 //Category
 Route::resource('categories','CategoryController');
+
+
 
 
 //Auth API
@@ -108,6 +77,8 @@ Route::middleware(['cors'])->group(function () {
             Route::post('services','ShopController@services');
             Route::post('payment','ShopController@payment');
             Route::get('my-order','ShopController@myOrder');
+            //midtrans
+            Route::post('notification/midtrans', 'ShopController@midtransNotif');
         });
 
         Route::get('midtrans-notif','ShopController@midtransNotif');

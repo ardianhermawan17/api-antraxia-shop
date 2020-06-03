@@ -70,8 +70,8 @@ class BooksTableSeeder extends Seeder
             $url = $faker->picsumUrl(200,250,null,true);
             $contents = file_get_contents($url);
             $name = substr($url, strrpos($url, '/') + 1);
-            $hash = Hash::make($name). '.jpg';
-            Storage::disk('public')->put('images/books/' . $hash, $contents);
+            $hash = 'images/books/' . Hash::make($name). '.jpg';
+            Storage::disk('public')->put($hash, $contents);
 
 //            cover fail
 //            $category = $image_categories[mt_rand(0, 8)];

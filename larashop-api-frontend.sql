@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 31 Bulan Mei 2020 pada 21.19
+-- Waktu pembuatan: 03 Jun 2020 pada 17.09
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.1
 
@@ -36,28 +36,28 @@ CREATE TABLE `books` (
   `author` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `publisher` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `cover` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `price` double(8,2) UNSIGNED NOT NULL DEFAULT 0.00,
+  `price` double(14,2) UNSIGNED NOT NULL DEFAULT 0.00,
   `weight` double(8,2) UNSIGNED NOT NULL DEFAULT 0.00,
   `views` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `stock` int(10) UNSIGNED NOT NULL DEFAULT 0,
+  `stock` int(10) UNSIGNED NOT NULL DEFAULT 4,
   `status` enum('PUBLISH','DRAFT') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'PUBLISH',
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
-  `deleted_by` int(11) DEFAULT NULL
+  `deleted_by` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `books`
 --
 
-INSERT INTO `books` (`id`, `title`, `slug`, `description`, `author`, `publisher`, `cover`, `price`, `weight`, `views`, `stock`, `status`, `created_at`, `updated_at`, `deleted_at`, `created_by`, `updated_by`, `deleted_by`) VALUES
-(1, 'Quod ea explicabo ducimus', 'quod-ea-explicabo-ducimus', 'Dignissimos omnis a ipsum quis nesciunt. Sint quia neque explicabo. Et neque eligendi aut perspiciatis aut. Inventore perspiciatis ipsam fugit itaque. Voluptatem sint porro est dolores veritatis. Et qui omnis et deleniti vero ab voluptas.', 'Drake Rath II', 'Leuschke-Lubowitz', '$2y$10$Om9FsA24/MpcaM4b0w0FXeH/uZ6orcjIHvwiAuQ8lSyMXpWa.6YmS.jpg', 100000.00, 0.50, 6, 13, 'PUBLISH', '2020-05-31 03:48:33', '2020-05-31 11:33:26', NULL, NULL, NULL, NULL),
-(2, 'Laudantium quae libero nobis natus perspiciatis odio error', 'laudantium-quae-libero-nobis-natus-perspiciatis-odio-error', 'Ratione exercitationem et cum omnis eos quia aut. Est voluptas voluptas itaque ex veniam. Voluptatum ex inventore numquam quas quis. Ipsum blanditiis est dicta suscipit error. Tenetur et aut ipsum optio sit omnis. Provident et nobis ut sed.', 'Quincy Schuppe', 'Denesik LLC', '$2y$10$QEvk.s546YzxLHMEpeXd.emHy0UAQyNSeFkHneHNiIQ7bgtmKHxOW.jpg', 50000.00, 0.50, 1, 11, 'PUBLISH', '2020-05-31 03:50:40', '2020-05-31 05:08:31', NULL, NULL, NULL, NULL),
-(3, 'Eaque id maiores excepturi', 'eaque-id-maiores-excepturi', 'Occaecati laborum unde odio quia voluptatem magni autem unde. Dicta aut officia et. Voluptas rem molestiae officiis ipsa ut voluptatem adipisci. Eum magnam et laborum eum voluptatem sit tempora.', 'Miss Yasmin Keebler', 'Schuppe and Sons', '$2y$10$uZIODQetJoAOUxFN5JfUxOtBkdVzx/RGoUdN/cMu2ESLth62P17c6.jpg', 250000.00, 0.50, 4, 17, 'PUBLISH', '2020-05-31 03:59:18', '2020-05-31 10:13:13', NULL, NULL, NULL, NULL),
-(4, 'The lord yoshi', 'The-lord-yoshi', 'Perjalan yoshi menjadi mahaguru', 'mas yoshi', 'yoshi dkk', '$2y$10$KVvLiBM/VldjzH1ucsKSPeXTKXrsqfNKYrCstVyIfvIiCPRNHHPdm.jpg', 300000.00, 0.50, 8, 16, 'PUBLISH', '2020-05-31 03:59:52', '2020-05-31 11:48:27', NULL, NULL, NULL, NULL);
+INSERT INTO `books` (`id`, `title`, `slug`, `description`, `author`, `publisher`, `cover`, `price`, `weight`, `views`, `stock`, `status`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(3, 'the lord yoshi', 'the-lord-yoshi', 'Ini adalah sebuah buku yang menceritakan lika-liku perjuang Achmed Yoshi Virgiawan dalam menghadapi cobaan dan tantangan, Menjadi The Best IT Programmer , with fak boi too', 'Achmed Yoshi Virgiawan', 'Lord Yoshi', 'images/books/62s4Fr4fjeIrPyslgdo0D3k17nypvkXtzm0wosvm.png', 1000000.00, 1.00, 4, 9, 'PUBLISH', 1, 6, NULL, '2020-06-03 00:55:35', '2020-06-03 07:43:54', NULL),
+(4, 'Python AI', 'python-ai', 'Learning python for greter good beacause AI is future', 'Imanuddin Ardian Hermawan', 'Skyforge.inc', 'images/books/8kL8eg4IgKLEwpV0zOpUxhpITqFAYv0y5MpVC30q.jpeg', 120000.00, 1.00, 3, 3, 'PUBLISH', 6, NULL, NULL, '2020-06-03 06:24:08', '2020-06-03 07:07:59', NULL),
+(5, 'Dicta omnis aliquam excepturi', 'dicta-omnis-aliquam-excepturi', 'Id et similique similique vel et. Itaque nam voluptatem sunt incidunt ut qui. Magni quasi qui tempora sit officia nostrum. Odit id laboriosam corporis dolorem occaecati sit illo.', 'Don Prosacco', 'Lindgren-Emard', 'images/books/$2y$10$Uy45yR1iPDoJUEiY.iUR3.hbutSIPHeRmhXIvou5AS01lWXpY190K.jpg', 400000.00, 0.50, 0, 9, 'PUBLISH', NULL, 6, NULL, '2020-06-03 07:47:56', '2020-06-03 07:54:01', NULL),
+(6, 'Officia maiores ducimus vel', 'officia-maiores-ducimus-vel', 'Veniam dolore maiores rerum. Non saepe ut aperiam id ea sunt sit. Placeat tempora sit praesentium commodi accusamus. Consectetur enim magni eaque et.', 'Janick Glover', 'Upton LLC', 'images/books/$2y$10$gFRcnnqSZqo4va9FtClgF.7Gi4ahMyp7C5nKbLpyzY54qDfLRynl..jpg', 450000.00, 0.50, 0, 7, 'PUBLISH', NULL, 6, NULL, '2020-06-03 07:49:40', '2020-06-03 07:54:30', NULL);
 
 -- --------------------------------------------------------
 
@@ -67,11 +67,24 @@ INSERT INTO `books` (`id`, `title`, `slug`, `description`, `author`, `publisher`
 
 CREATE TABLE `book_category` (
   `id` int(10) UNSIGNED NOT NULL,
-  `book_id` int(11) NOT NULL,
-  `category_id` int(11) NOT NULL,
+  `book_id` int(10) UNSIGNED DEFAULT NULL,
+  `category_id` int(10) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `book_category`
+--
+
+INSERT INTO `book_category` (`id`, `book_id`, `category_id`, `created_at`, `updated_at`) VALUES
+(2, 3, 1, NULL, NULL),
+(3, 4, 1, NULL, NULL),
+(4, 4, 2, NULL, NULL),
+(5, 5, 1, NULL, NULL),
+(6, 5, 4, NULL, NULL),
+(7, 6, 1, NULL, NULL),
+(8, 6, 5, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -81,12 +94,20 @@ CREATE TABLE `book_category` (
 
 CREATE TABLE `book_order` (
   `id` int(10) UNSIGNED NOT NULL,
-  `book_id` int(11) NOT NULL,
-  `order_id` int(11) NOT NULL,
-  `quantity` int(11) NOT NULL,
+  `book_id` int(10) UNSIGNED NOT NULL,
+  `order_id` int(10) UNSIGNED NOT NULL,
+  `quantity` int(10) UNSIGNED NOT NULL DEFAULT 1,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `book_order`
+--
+
+INSERT INTO `book_order` (`id`, `book_id`, `order_id`, `quantity`, `created_at`, `updated_at`) VALUES
+(1, 4, 1, 3, '2020-06-03 06:38:23', '2020-06-03 06:38:23'),
+(5, 3, 5, 1, '2020-06-03 07:23:43', '2020-06-03 07:23:43');
 
 -- --------------------------------------------------------
 
@@ -100,24 +121,25 @@ CREATE TABLE `categories` (
   `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` enum('PUBLISH','DRAFT') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'PUBLISH',
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
-  `deleted_by` int(11) DEFAULT NULL
+  `deleted_by` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `categories`
 --
 
-INSERT INTO `categories` (`id`, `name`, `slug`, `image`, `status`, `created_at`, `updated_at`, `deleted_at`, `created_by`, `updated_by`, `deleted_by`) VALUES
-(1, 'aut', 'aut', '$2y$10$sS4DiqME.r9UGMVqwT/wpemjcf5/BahdOZRaAZz/HHDJ4/A7Km932.jpg', 'PUBLISH', '2020-05-31 03:49:43', NULL, NULL, NULL, NULL, NULL),
-(2, 'dolor', 'dolor', '$2y$10$YhgSCXUMkQhCuMhzyt2u8.3uldVorUFhX674USGhVcsDYH9eNpSNK.jpg', 'PUBLISH', '2020-05-31 03:51:21', NULL, NULL, NULL, NULL, NULL),
-(3, 'quidem', 'quidem', '$2y$10$2ezA.UhxVHeEPUR5liObf.9k2G4EsFcM5LC25Kcp5CFhCMHhMwDmW.jpg', 'PUBLISH', '2020-05-31 03:51:33', NULL, NULL, NULL, NULL, NULL),
-(4, 'itaque', 'itaque', '$2y$10$XV.ceUkp.LKBghcIOMfb4eC1ZiHkuDlZ.PP/rAhhR2ZfXTGSvDnpu.jpg', 'PUBLISH', '2020-05-31 03:52:09', NULL, NULL, NULL, NULL, NULL),
-(5, 'libero', 'libero', '$2y$10$JU8eUNd4.c/0S4CizgeiCeELYwsBGvMjVlwq0nJ.Xed.9piGdoiuG.jpg', 'PUBLISH', '2020-05-31 03:59:10', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `categories` (`id`, `name`, `slug`, `image`, `status`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Computer', 'computer', 'images/categories/jgpVSjXrb60cNLVTUJbVlRsbwqDfHnQTuSexb9Zz.jpeg', 'PUBLISH', 1, 1, NULL, '2020-06-02 21:13:11', '2020-06-03 03:38:41', NULL),
+(2, 'History', 'history', 'images/categories/DpKwx3FLnhPOLoWt5gCLtWFDCHe4DJx3TgYaklyv.png', 'PUBLISH', 6, NULL, NULL, '2020-06-03 06:17:21', '2020-06-03 06:17:21', NULL),
+(3, 'vero', 'vero', 'images/categories/DjzsLa9RTLmixVwJvdhDWb0NvixNv6qHPZ6QAQsi.png', 'PUBLISH', NULL, 6, NULL, '2020-06-03 07:42:43', '2020-06-03 07:46:08', NULL),
+(4, 'forest', 'forest', 'images/categories/xBkZO2rQGHHq0gQnPiDQzLgwwUGwTx8aBDZDlpDr.jpeg', 'PUBLISH', NULL, 6, NULL, '2020-06-03 07:42:49', '2020-06-03 07:46:58', NULL),
+(5, 'magnam', 'magnam', 'images/categories/gkGgcIFlYW6CcB8LiWXCkrhSQjrnlPK8VJ4aeDdI.jpeg', 'PUBLISH', NULL, 6, NULL, '2020-06-03 07:42:54', '2020-06-03 07:47:13', NULL),
+(6, 'alias', 'alias', 'images/categories/frWJqjVYkOR9fZsKcnIylpjBhK9xF8XpC30DmOyS.png', 'PUBLISH', NULL, 6, NULL, '2020-06-03 07:43:06', '2020-06-03 07:47:30', NULL);
 
 -- --------------------------------------------------------
 
@@ -673,16 +695,19 @@ CREATE TABLE `migrations` (
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
-(2, '2019_08_19_000000_create_failed_jobs_table', 1),
-(3, '2020_05_25_094928_create_books_table', 1),
-(4, '2020_05_25_095715_alter_users_table', 1),
-(5, '2020_05_25_100228_create_categories_table', 1),
-(6, '2020_05_25_100523_create_book_category_table', 1),
-(7, '2020_05_25_100722_create_orders_table', 1),
-(8, '2020_05_25_101039_create_book_order_table', 1),
-(9, '2020_05_25_101210_create_provinces_table', 1),
-(10, '2020_05_25_101319_create_cities_table', 1),
-(11, '2020_05_26_073805_adds_api_token_to_users_table', 1);
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2019_08_19_000000_create_failed_jobs_table', 1),
+(4, '2020_05_25_094928_create_books_table', 1),
+(5, '2020_05_25_095715_alter_users_table', 1),
+(6, '2020_05_25_100228_create_categories_table', 1),
+(7, '2020_05_25_100523_create_book_category_table', 1),
+(8, '2020_05_25_100722_create_orders_table', 1),
+(9, '2020_05_25_101039_create_book_order_table', 1),
+(10, '2020_05_25_101210_create_provinces_table', 1),
+(11, '2020_05_25_101319_create_cities_table', 1),
+(12, '2020_05_26_073805_adds_api_token_to_users_table', 1),
+(13, '2020_06_01_052412_add_midtrans_orders_table', 1),
+(14, '2020_06_01_120812_add_google_to_users_table', 1);
 
 -- --------------------------------------------------------
 
@@ -692,13 +717,34 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 
 CREATE TABLE `orders` (
   `id` int(10) UNSIGNED NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `total_price` double(8,2) NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `total_bill` double(12,2) UNSIGNED NOT NULL DEFAULT 0.00,
   `invoice_number` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `courier_service` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` enum('SUBMIT','PROCESS','FINISH','CANCEL') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'SUBMIT',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `payment_link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_id`, `total_bill`, `invoice_number`, `courier_service`, `status`, `created_at`, `updated_at`, `payment_link`) VALUES
+(1, 1, 390000.00, '20200603133822', 'jne-CTCYES', 'FINISH', '2020-06-03 06:38:22', '2020-06-03 08:08:27', NULL),
+(5, 1, 1000025000.00, '20200603142343', 'jne-YES', 'SUBMIT', '2020-06-03 07:23:43', '2020-06-03 07:23:44', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `password_resets`
+--
+
+CREATE TABLE `password_resets` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -759,7 +805,7 @@ INSERT INTO `provinces` (`id`, `province`) VALUES
 --
 
 CREATE TABLE `users` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
@@ -767,6 +813,7 @@ CREATE TABLE `users` (
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `roles` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `address` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `city_id` int(11) DEFAULT NULL,
@@ -774,17 +821,19 @@ CREATE TABLE `users` (
   `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` enum('ACTIVE','INACTIVE') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'ACTIVE',
-  `api_token` varchar(60) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `api_token` varchar(60) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `google_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `roles`, `address`, `city_id`, `province_id`, `phone`, `avatar`, `status`, `api_token`) VALUES
-(1, 'Dr. Kelton Langworth I', 'zachary22@example.net', NULL, '$2y$10$5ATrGSC9xbD6uzO23o/5SeiOZVBRqxr/HS77yahkOmVIxuGZuaCO6', NULL, '2020-05-31 03:48:29', '2020-05-31 05:08:41', '[\"CUSTOMER\"]', NULL, NULL, NULL, NULL, '$2y$10$L8QZIRj7hshn5GKaEucv5eTg7nbS8rmL3yiwiFPHeCB4R5Z9XH/Ha.jpg', 'ACTIVE', '7cBfjo4rkwunN6iWr6Ik6MjgTYKH5mKxJYwdzm4QAYidJVN2oBQF0UpIIy2n'),
-(2, 'Miss Noemie Carter DVM', 'kaya.smith@example.org', NULL, '$2y$10$3XiaTBICXr4LxOWUbeZahesGlwGlKGhiSyZUxdmqxO9orRYFlYFiq', NULL, '2020-05-31 03:50:27', NULL, '[\"CUSTOMER\"]', NULL, NULL, NULL, NULL, '$2y$10$rIXDwOvDWEcep8McE1hEk.xIhAeXMqXxYzfZkSs8pptJa5t1rUa7K.jpg', 'ACTIVE', NULL),
-(3, 'sengoku 403', 'felixx.y.h.u123@gmail.com', NULL, '$2y$10$Op5JIic3zDSw0aBkHIMJCO1Rxt90DWB7rFvUgxUOVf99d86aLxmDG', NULL, '2020-05-31 05:18:07', '2020-05-31 11:48:22', '[\"CUSTOMER\"]', 'margorejo 31 a', 444, 11, '0821421424', NULL, 'ACTIVE', 'yMa7a5TM8nGA5Cvykw7ynEBDUPLHS59sNdVtNlKr1y4pkWJ63amXBJCVElFj');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `username`, `roles`, `address`, `city_id`, `province_id`, `phone`, `avatar`, `status`, `api_token`, `google_id`) VALUES
+(1, 'Site Administrator', 'administrator@antraxia.com', NULL, '$2y$10$y4kN/WhjKYqNYMR/86wAOuu35gYhvkoly8IrPeakd9P4QImzA17r2', NULL, '2020-06-02 11:35:52', '2020-06-03 07:21:29', 'Administrator', '[\"ADMIN\"]', 'Surabaya, Jawa Timur, JL.margorejo 31 A', 501, 5, '082143581950', 'images/users/Lefg1rexJdSbobpYTbiSiGBTKs8oQhqBZouJxOnI.jpeg', 'ACTIVE', 'Ko5ci3yMWJBDXRjVCNwzVcm0yYqFRTqeveg7TetKRftVSV2WzDvUHgSXLLoO', NULL),
+(2, 'Staff Content', 'staff@antraxia.com', NULL, '$2y$10$QOdaDxkp9gthTWoOqveYtOTyc5hjMYqvubRzN/kSv2//SrMQvW6EG', NULL, '2020-06-02 11:35:52', '2020-06-03 03:27:24', 'Staff', '[\"STAFF\"]', 'Surabaya, Jawa Timur, JL.margorejo 31 A', NULL, NULL, '08214242140', 'images/users/4YAIRzvPvfkjtRWwl2BPVTZ3fJLEDiYAa4hE156t.png', 'INACTIVE', NULL, NULL),
+(3, 'Customer Anjanath', 'customer@antraxia.com', NULL, '$2y$10$f5ZKa2hmabyHf/AfNw0Ye.VOcSIZGx4eS8z9oJj1kzTIrkZw7FpJe', NULL, '2020-06-02 11:35:53', '2020-06-03 03:37:38', 'customer', '[\"CUSTOMER\"]', 'Surabaya, Jawa Timur, JL.margorejo 31 A', NULL, NULL, '082143581240', 'images/users/aQypcXZLelIeXQqgxweCho8Ti90ZRDWbNjrkMlpa.png', 'ACTIVE', NULL, NULL),
+(6, 'Imanuddin Ardian Hermawan', 'imanuddin.ardian@gmail.com', NULL, '223c98412f4f9428dace688de1376b60', NULL, '2020-06-03 06:11:36', '2020-06-03 06:11:36', 'Imanuddin Ardian Hermawan', '[\"ADMIN\"]', NULL, NULL, NULL, NULL, NULL, 'ACTIVE', NULL, '108789511411078980945');
 
 --
 -- Indexes for dumped tables
@@ -801,13 +850,17 @@ ALTER TABLE `books`
 -- Indeks untuk tabel `book_category`
 --
 ALTER TABLE `book_category`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `book_category_book_id_foreign` (`book_id`),
+  ADD KEY `book_category_category_id_foreign` (`category_id`);
 
 --
 -- Indeks untuk tabel `book_order`
 --
 ALTER TABLE `book_order`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `book_order_order_id_foreign` (`order_id`),
+  ADD KEY `book_order_book_id_foreign` (`book_id`);
 
 --
 -- Indeks untuk tabel `categories`
@@ -838,7 +891,15 @@ ALTER TABLE `migrations`
 -- Indeks untuk tabel `orders`
 --
 ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `orders_payment_link_unique` (`payment_link`),
+  ADD KEY `orders_user_id_foreign` (`user_id`);
+
+--
+-- Indeks untuk tabel `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD KEY `password_resets_email_index` (`email`);
 
 --
 -- Indeks untuk tabel `provinces`
@@ -852,6 +913,7 @@ ALTER TABLE `provinces`
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`),
+  ADD UNIQUE KEY `users_username_unique` (`username`),
   ADD UNIQUE KEY `users_api_token_unique` (`api_token`);
 
 --
@@ -862,25 +924,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `book_category`
 --
 ALTER TABLE `book_category`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `book_order`
 --
 ALTER TABLE `book_order`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `cities`
@@ -898,13 +960,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `provinces`
@@ -916,7 +978,31 @@ ALTER TABLE `provinces`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `book_category`
+--
+ALTER TABLE `book_category`
+  ADD CONSTRAINT `book_category_book_id_foreign` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`),
+  ADD CONSTRAINT `book_category_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`);
+
+--
+-- Ketidakleluasaan untuk tabel `book_order`
+--
+ALTER TABLE `book_order`
+  ADD CONSTRAINT `book_order_book_id_foreign` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`),
+  ADD CONSTRAINT `book_order_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`);
+
+--
+-- Ketidakleluasaan untuk tabel `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

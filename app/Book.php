@@ -3,11 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Category;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Book extends Model
 {
 
+    use SoftDeletes;
     //Nama class & Nama tabel
     //protected $table = 'book';
 
@@ -29,5 +30,10 @@ class Book extends Model
     public function categories()
     {
         return $this->belongsToMany(Category::class);
+    }
+
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class);
     }
 }

@@ -355,6 +355,7 @@ class ShopController extends Controller
                             $status = 'success';
                             $message = 'Transaction success';
 
+                            //TODO :: MIDTRANS CONTROLLER
                             /* MULAI MIDTRANS */
                             \Veritrans_Config::$serverKey   =   "SB-Mid-server-LfsGinB-KYa9DdrDpIA1fPbU";
                             \Veritrans_Config::$isProduction=   false;
@@ -417,9 +418,9 @@ class ShopController extends Controller
         $type = $notif->payment_type;
         $order_id = $notif->order_id;
         $fraud = $notif->fraud_status;
-        if ($transaction == 'settlement'){
+        if ($transaction === 'settlement'){
             echo "Transaction order_id: " . $order_id ." successfully";
-            // implementasikan disini
+            return redirect('http://localhost:8080/my-order');
         }
     }
 

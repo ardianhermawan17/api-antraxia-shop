@@ -15,13 +15,15 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
-            $table->float('total_bill');
+            $table->integer('user_id')->unsigned();
+            $table->float('total_bill',12,2)->unsigned()->default(0);
             $table->string('invoice_number');
             $table->string('courier_service')->nullable();
             $table->enum('status', ['SUBMIT', 'PROCESS',
                 'FINISH', 'CANCEL'])->default('SUBMIT');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

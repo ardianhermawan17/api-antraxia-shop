@@ -1,0 +1,82 @@
++--------+-----------+----------------------------------------------+-----------------------------+------------------------------------------------------------------------+------------------------+
+| Domain | Method    | URI                                          | Name                        | Action                                                                 | Middleware             |
++--------+-----------+----------------------------------------------+-----------------------------+------------------------------------------------------------------------+------------------------+
+|        | GET|HEAD  | admin                                        |                             | Closure                                                                | web                    |
+|        | GET|HEAD  | admin/ajax/categories/search                 | categories.ajax-search      | App\Http\Controllers\Admin\CategoryController@ajaxSearch               | web,Closure            |
+|        | GET|HEAD  | admin/books                                  | books.index                 | App\Http\Controllers\Admin\BookController@index                        | web,Closure            |
+|        | POST      | admin/books                                  | books.store                 | App\Http\Controllers\Admin\BookController@store                        | web,Closure            |
+|        | GET|HEAD  | admin/books/create                           | books.create                | App\Http\Controllers\Admin\BookController@create                       | web,Closure            |
+|        | GET|HEAD  | admin/books/trash                            | books.trash                 | App\Http\Controllers\Admin\BookController@trash                        | web,Closure            |
+|        | DELETE    | admin/books/{book}                           | books.destroy               | App\Http\Controllers\Admin\BookController@destroy                      | web,Closure            |
+|        | GET|HEAD  | admin/books/{book}                           | books.show                  | App\Http\Controllers\Admin\BookController@show                         | web,Closure            |
+|        | PUT|PATCH | admin/books/{book}                           | books.update                | App\Http\Controllers\Admin\BookController@update                       | web,Closure            |
+|        | GET|HEAD  | admin/books/{book}/edit                      | books.edit                  | App\Http\Controllers\Admin\BookController@edit                         | web,Closure            |
+|        | POST      | admin/books/{book}/restore                   | books.restore               | App\Http\Controllers\Admin\BookController@restore                      | web,Closure            |
+|        | DELETE    | admin/books/{id}/delete-permanent            | books.delete-permanent      | App\Http\Controllers\Admin\BookController@deletePermanent              | web,Closure            |
+|        | POST      | admin/categories                             | categories.store            | App\Http\Controllers\Admin\CategoryController@store                    | web,Closure            |
+|        | GET|HEAD  | admin/categories                             | categories.index            | App\Http\Controllers\Admin\CategoryController@index                    | web,Closure            |
+|        | GET|HEAD  | admin/categories/create                      | categories.create           | App\Http\Controllers\Admin\CategoryController@create                   | web,Closure            |
+|        | GET|HEAD  | admin/categories/trash                       | categories.trash            | App\Http\Controllers\Admin\CategoryController@trash                    | web,Closure            |
+|        | PUT|PATCH | admin/categories/{category}                  | categories.update           | App\Http\Controllers\Admin\CategoryController@update                   | web,Closure            |
+|        | DELETE    | admin/categories/{category}                  | categories.destroy          | App\Http\Controllers\Admin\CategoryController@destroy                  | web,Closure            |
+|        | GET|HEAD  | admin/categories/{category}                  | categories.show             | App\Http\Controllers\Admin\CategoryController@show                     | web,Closure            |
+|        | DELETE    | admin/categories/{category}/delete-permanent | categories.delete-permanent | App\Http\Controllers\Admin\CategoryController@deletePermanent          | web,Closure            |
+|        | GET|HEAD  | admin/categories/{category}/edit             | categories.edit             | App\Http\Controllers\Admin\CategoryController@edit                     | web,Closure            |
+|        | GET|HEAD  | admin/categories/{id}/restore                | categories.restore          | App\Http\Controllers\Admin\CategoryController@restore                  | web,Closure            |
+|        | GET|HEAD  | admin/home                                   | home                        | App\Http\Controllers\HomeController@index                              | web,auth               |
+|        | POST      | admin/login                                  |                             | App\Http\Controllers\Auth\LoginController@login                        | web,guest              |
+|        | GET|HEAD  | admin/login                                  | login                       | App\Http\Controllers\Auth\LoginController@showLoginForm                | web,guest              |
+|        | POST      | admin/logout                                 | logout                      | App\Http\Controllers\Auth\LoginController@logout                       | web                    |
+|        | GET|HEAD  | admin/orders                                 | orders.index                | App\Http\Controllers\Admin\OrderController@index                       | web,Closure            |
+|        | POST      | admin/orders                                 | orders.store                | App\Http\Controllers\Admin\OrderController@store                       | web,Closure            |
+|        | GET|HEAD  | admin/orders/create                          | orders.create               | App\Http\Controllers\Admin\OrderController@create                      | web,Closure            |
+|        | DELETE    | admin/orders/{order}                         | orders.destroy              | App\Http\Controllers\Admin\OrderController@destroy                     | web,Closure            |
+|        | PUT|PATCH | admin/orders/{order}                         | orders.update               | App\Http\Controllers\Admin\OrderController@update                      | web,Closure            |
+|        | GET|HEAD  | admin/orders/{order}                         | orders.show                 | App\Http\Controllers\Admin\OrderController@show                        | web,Closure            |
+|        | GET|HEAD  | admin/orders/{order}/edit                    | orders.edit                 | App\Http\Controllers\Admin\OrderController@edit                        | web,Closure            |
+|        | GET|HEAD  | admin/password/confirm                       | password.confirm            | App\Http\Controllers\Auth\ConfirmPasswordController@showConfirmForm    | web,auth               |
+|        | POST      | admin/password/confirm                       |                             | App\Http\Controllers\Auth\ConfirmPasswordController@confirm            | web,auth               |
+|        | POST      | admin/password/email                         | password.email              | App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail  | web                    |
+|        | POST      | admin/password/reset                         | password.update             | App\Http\Controllers\Auth\ResetPasswordController@reset                | web                    |
+|        | GET|HEAD  | admin/password/reset                         | password.request            | App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm | web                    |
+|        | GET|HEAD  | admin/password/reset/{token}                 | password.reset              | App\Http\Controllers\Auth\ResetPasswordController@showResetForm        | web                    |
+|        | GET|HEAD  | admin/register                               | register                    | App\Http\Controllers\Auth\RegisterController@showRegistrationForm      | web,guest              |
+|        | POST      | admin/register                               |                             | App\Http\Controllers\Auth\RegisterController@register                  | web,guest              |
+|        | POST      | admin/users                                  | users.store                 | App\Http\Controllers\Admin\UserController@store                        | web,Closure            |
+|        | GET|HEAD  | admin/users                                  | users.index                 | App\Http\Controllers\Admin\UserController@index                        | web,Closure            |
+|        | GET|HEAD  | admin/users/create                           | users.create                | App\Http\Controllers\Admin\UserController@create                       | web,Closure            |
+|        | DELETE    | admin/users/{user}                           | users.destroy               | App\Http\Controllers\Admin\UserController@destroy                      | web,Closure            |
+|        | PUT|PATCH | admin/users/{user}                           | users.update                | App\Http\Controllers\Admin\UserController@update                       | web,Closure            |
+|        | GET|HEAD  | admin/users/{user}                           | users.show                  | App\Http\Controllers\Admin\UserController@show                         | web,Closure            |
+|        | GET|HEAD  | admin/users/{user}/edit                      | users.edit                  | App\Http\Controllers\Admin\UserController@edit                         | web,Closure            |
+|        | GET|HEAD  | buku/{judul}                                 |                             | App\Http\Controllers\BookController@cetak                              | api,throttle:10,1,cors |
+|        | GET|HEAD  | categories                                   | categories.index            | App\Http\Controllers\CategoryController@index                          | api                    |
+|        | POST      | categories                                   | categories.store            | App\Http\Controllers\CategoryController@store                          | api                    |
+|        | GET|HEAD  | categories/create                            | categories.create           | App\Http\Controllers\CategoryController@create                         | api                    |
+|        | GET|HEAD  | categories/{category}                        | categories.show             | App\Http\Controllers\CategoryController@show                           | api                    |
+|        | PUT|PATCH | categories/{category}                        | categories.update           | App\Http\Controllers\CategoryController@update                         | api                    |
+|        | DELETE    | categories/{category}                        | categories.destroy          | App\Http\Controllers\CategoryController@destroy                        | api                    |
+|        | GET|HEAD  | categories/{category}/edit                   | categories.edit             | App\Http\Controllers\CategoryController@edit                           | api                    |
+|        | GET|HEAD  | google                                       | google.login                | App\Http\Controllers\GoogleController@redirect                         | web                    |
+|        | GET|HEAD  | google/callback                              |                             | App\Http\Controllers\GoogleController@callback                         | web                    |
+|        | GET|HEAD  | user                                         |                             | Closure                                                                | api,auth:api           |
+|        | GET|HEAD  | v1/book/{id}                                 |                             | App\Http\Controllers\BookController@view                               | api,cors               |
+|        | GET|HEAD  | v1/books                                     |                             | App\Http\Controllers\BookController@index                              | api,cors               |
+|        | GET|HEAD  | v1/books/search/{keyword}                    |                             | App\Http\Controllers\BookController@search                             | api,cors               |
+|        | GET|HEAD  | v1/books/slug/{slug}                         |                             | App\Http\Controllers\BookController@slug                               | api,cors               |
+|        | GET|HEAD  | v1/books/top/{count}                         |                             | App\Http\Controllers\BookController@top                                | api,cors               |
+|        | GET|HEAD  | v1/categories                                |                             | App\Http\Controllers\CategoryController@index                          | api,cors               |
+|        | GET|HEAD  | v1/categories/random/{count}                 |                             | App\Http\Controllers\CategoryController@random                         | api,cors               |
+|        | GET|HEAD  | v1/categories/slug/{slug}                    |                             | App\Http\Controllers\CategoryController@slug                           | api,cors               |
+|        | GET|HEAD  | v1/cities                                    |                             | App\Http\Controllers\ShopController@cities                             | api,cors               |
+|        | GET|HEAD  | v1/couriers                                  |                             | App\Http\Controllers\ShopController@couriers                           | api,cors               |
+|        | POST      | v1/login                                     |                             | App\Http\Controllers\AuthController@login                              | api,cors               |
+|        | POST      | v1/logout                                    |                             | App\Http\Controllers\AuthController@logout                             | api,cors,auth:api      |
+|        | GET|HEAD  | v1/midtrans-notif                            |                             | App\Http\Controllers\ShopController@midtransNotif                      | api,cors               |
+|        | GET|HEAD  | v1/my-order                                  |                             | App\Http\Controllers\ShopController@myOrder                            | api,cors,auth:api      |
+|        | POST      | v1/payment                                   |                             | App\Http\Controllers\ShopController@payment                            | api,cors,auth:api      |
+|        | GET|HEAD  | v1/provinces                                 |                             | App\Http\Controllers\ShopController@provinces                          | api,cors               |
+|        | POST      | v1/register                                  |                             | App\Http\Controllers\AuthController@register                           | api,cors               |
+|        | POST      | v1/services                                  |                             | App\Http\Controllers\ShopController@services                           | api,cors,auth:api      |
+|        | POST      | v1/shipping                                  |                             | App\Http\Controllers\ShopController@shipping                           | api,cors,auth:api      |
++--------+-----------+----------------------------------------------+-----------------------------+------------------------------------------------------------------------+------------------------+
