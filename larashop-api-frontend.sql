@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Jun 2020 pada 17.09
+-- Waktu pembuatan: 04 Jun 2020 pada 17.54
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.1
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `larashop-api-frontend`
+-- Database: `larashop_api`
 --
 
 -- --------------------------------------------------------
@@ -54,10 +54,10 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `title`, `slug`, `description`, `author`, `publisher`, `cover`, `price`, `weight`, `views`, `stock`, `status`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(3, 'the lord yoshi', 'the-lord-yoshi', 'Ini adalah sebuah buku yang menceritakan lika-liku perjuang Achmed Yoshi Virgiawan dalam menghadapi cobaan dan tantangan, Menjadi The Best IT Programmer , with fak boi too', 'Achmed Yoshi Virgiawan', 'Lord Yoshi', 'images/books/62s4Fr4fjeIrPyslgdo0D3k17nypvkXtzm0wosvm.png', 1000000.00, 1.00, 4, 9, 'PUBLISH', 1, 6, NULL, '2020-06-03 00:55:35', '2020-06-03 07:43:54', NULL),
-(4, 'Python AI', 'python-ai', 'Learning python for greter good beacause AI is future', 'Imanuddin Ardian Hermawan', 'Skyforge.inc', 'images/books/8kL8eg4IgKLEwpV0zOpUxhpITqFAYv0y5MpVC30q.jpeg', 120000.00, 1.00, 3, 3, 'PUBLISH', 6, NULL, NULL, '2020-06-03 06:24:08', '2020-06-03 07:07:59', NULL),
-(5, 'Dicta omnis aliquam excepturi', 'dicta-omnis-aliquam-excepturi', 'Id et similique similique vel et. Itaque nam voluptatem sunt incidunt ut qui. Magni quasi qui tempora sit officia nostrum. Odit id laboriosam corporis dolorem occaecati sit illo.', 'Don Prosacco', 'Lindgren-Emard', 'images/books/$2y$10$Uy45yR1iPDoJUEiY.iUR3.hbutSIPHeRmhXIvou5AS01lWXpY190K.jpg', 400000.00, 0.50, 0, 9, 'PUBLISH', NULL, 6, NULL, '2020-06-03 07:47:56', '2020-06-03 07:54:01', NULL),
-(6, 'Officia maiores ducimus vel', 'officia-maiores-ducimus-vel', 'Veniam dolore maiores rerum. Non saepe ut aperiam id ea sunt sit. Placeat tempora sit praesentium commodi accusamus. Consectetur enim magni eaque et.', 'Janick Glover', 'Upton LLC', 'images/books/$2y$10$gFRcnnqSZqo4va9FtClgF.7Gi4ahMyp7C5nKbLpyzY54qDfLRynl..jpg', 450000.00, 0.50, 0, 7, 'PUBLISH', NULL, 6, NULL, '2020-06-03 07:49:40', '2020-06-03 07:54:30', NULL);
+(3, 'the lord yoshi', 'the-lord-yoshi', 'Ini adalah sebuah buku yang menceritakan lika-liku perjuang Achmed Yoshi Virgiawan dalam menghadapi cobaan dan tantangan, Menjadi The Best IT Programmer , with fak boi too', 'Achmed Yoshi Virgiawan', 'Lord Yoshi', 'images/books/62s4Fr4fjeIrPyslgdo0D3k17nypvkXtzm0wosvm.png', 1000000.00, 1.00, 8, 8, 'PUBLISH', 1, 6, NULL, '2020-06-03 00:55:35', '2020-06-04 06:33:29', NULL),
+(4, 'Python AI', 'python-ai', 'Learning python for greter good beacause AI is future', 'Imanuddin Ardian Hermawan', 'Skyforge.inc', 'images/books/8kL8eg4IgKLEwpV0zOpUxhpITqFAYv0y5MpVC30q.jpeg', 120000.00, 1.00, 6, 2, 'PUBLISH', 6, NULL, NULL, '2020-06-03 06:24:08', '2020-06-04 06:33:16', NULL),
+(5, 'Dicta omnis aliquam excepturi', 'dicta-omnis-aliquam-excepturi', 'Id et similique similique vel et. Itaque nam voluptatem sunt incidunt ut qui. Magni quasi qui tempora sit officia nostrum. Odit id laboriosam corporis dolorem occaecati sit illo.', 'Don Prosacco', 'Lindgren-Emard', 'images/books/$2y$10$Uy45yR1iPDoJUEiY.iUR3.hbutSIPHeRmhXIvou5AS01lWXpY190K.jpg', 400000.00, 0.50, 1, 9, 'PUBLISH', NULL, 6, NULL, '2020-06-03 07:47:56', '2020-06-04 06:33:35', NULL),
+(6, 'Officia maiores ducimus vel', 'officia-maiores-ducimus-vel', 'Veniam dolore maiores rerum. Non saepe ut aperiam id ea sunt sit. Placeat tempora sit praesentium commodi accusamus. Consectetur enim magni eaque et.', 'Janick Glover', 'Upton LLC', 'images/books/$2y$10$gFRcnnqSZqo4va9FtClgF.7Gi4ahMyp7C5nKbLpyzY54qDfLRynl..jpg', 450000.00, 0.50, 1, 7, 'PUBLISH', NULL, 6, NULL, '2020-06-03 07:49:40', '2020-06-04 06:20:07', NULL);
 
 -- --------------------------------------------------------
 
@@ -107,7 +107,9 @@ CREATE TABLE `book_order` (
 
 INSERT INTO `book_order` (`id`, `book_id`, `order_id`, `quantity`, `created_at`, `updated_at`) VALUES
 (1, 4, 1, 3, '2020-06-03 06:38:23', '2020-06-03 06:38:23'),
-(5, 3, 5, 1, '2020-06-03 07:23:43', '2020-06-03 07:23:43');
+(5, 3, 5, 1, '2020-06-03 07:23:43', '2020-06-03 07:23:43'),
+(6, 3, 6, 1, '2020-06-03 09:16:48', '2020-06-03 09:16:48'),
+(7, 4, 6, 1, '2020-06-03 09:16:49', '2020-06-03 09:16:49');
 
 -- --------------------------------------------------------
 
@@ -733,7 +735,8 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`id`, `user_id`, `total_bill`, `invoice_number`, `courier_service`, `status`, `created_at`, `updated_at`, `payment_link`) VALUES
 (1, 1, 390000.00, '20200603133822', 'jne-CTCYES', 'FINISH', '2020-06-03 06:38:22', '2020-06-03 08:08:27', NULL),
-(5, 1, 1000025000.00, '20200603142343', 'jne-YES', 'SUBMIT', '2020-06-03 07:23:43', '2020-06-03 07:23:44', NULL);
+(5, 1, 1000025000.00, '20200603142343', 'jne-YES', 'SUBMIT', '2020-06-03 07:23:43', '2020-06-03 07:23:44', NULL),
+(6, 1, 1140000.00, '20200603161648', 'jne-CTCYES', 'SUBMIT', '2020-06-03 09:16:48', '2020-06-03 09:16:49', NULL);
 
 -- --------------------------------------------------------
 
@@ -830,7 +833,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `username`, `roles`, `address`, `city_id`, `province_id`, `phone`, `avatar`, `status`, `api_token`, `google_id`) VALUES
-(1, 'Site Administrator', 'administrator@antraxia.com', NULL, '$2y$10$y4kN/WhjKYqNYMR/86wAOuu35gYhvkoly8IrPeakd9P4QImzA17r2', NULL, '2020-06-02 11:35:52', '2020-06-03 07:21:29', 'Administrator', '[\"ADMIN\"]', 'Surabaya, Jawa Timur, JL.margorejo 31 A', 501, 5, '082143581950', 'images/users/Lefg1rexJdSbobpYTbiSiGBTKs8oQhqBZouJxOnI.jpeg', 'ACTIVE', 'Ko5ci3yMWJBDXRjVCNwzVcm0yYqFRTqeveg7TetKRftVSV2WzDvUHgSXLLoO', NULL),
+(1, 'ardian hermawan', 'administrator@antraxia.com', NULL, '$2y$10$y4kN/WhjKYqNYMR/86wAOuu35gYhvkoly8IrPeakd9P4QImzA17r2', NULL, '2020-06-02 11:35:52', '2020-06-04 06:13:57', 'Administrator', '[\"ADMIN\"]', 'Surabaya, Jawa Timur, JL.margorejo 31 A', 444, 11, '082143581950', 'images/users/Ia8etP9YTVhzLSg79P63FeDgEcAtyyU8uQ8B9eyy.png', 'INACTIVE', NULL, NULL),
 (2, 'Staff Content', 'staff@antraxia.com', NULL, '$2y$10$QOdaDxkp9gthTWoOqveYtOTyc5hjMYqvubRzN/kSv2//SrMQvW6EG', NULL, '2020-06-02 11:35:52', '2020-06-03 03:27:24', 'Staff', '[\"STAFF\"]', 'Surabaya, Jawa Timur, JL.margorejo 31 A', NULL, NULL, '08214242140', 'images/users/4YAIRzvPvfkjtRWwl2BPVTZ3fJLEDiYAa4hE156t.png', 'INACTIVE', NULL, NULL),
 (3, 'Customer Anjanath', 'customer@antraxia.com', NULL, '$2y$10$f5ZKa2hmabyHf/AfNw0Ye.VOcSIZGx4eS8z9oJj1kzTIrkZw7FpJe', NULL, '2020-06-02 11:35:53', '2020-06-03 03:37:38', 'customer', '[\"CUSTOMER\"]', 'Surabaya, Jawa Timur, JL.margorejo 31 A', NULL, NULL, '082143581240', 'images/users/aQypcXZLelIeXQqgxweCho8Ti90ZRDWbNjrkMlpa.png', 'ACTIVE', NULL, NULL),
 (6, 'Imanuddin Ardian Hermawan', 'imanuddin.ardian@gmail.com', NULL, '223c98412f4f9428dace688de1376b60', NULL, '2020-06-03 06:11:36', '2020-06-03 06:11:36', 'Imanuddin Ardian Hermawan', '[\"ADMIN\"]', NULL, NULL, NULL, NULL, NULL, 'ACTIVE', NULL, '108789511411078980945');
@@ -936,7 +939,7 @@ ALTER TABLE `book_category`
 -- AUTO_INCREMENT untuk tabel `book_order`
 --
 ALTER TABLE `book_order`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `categories`
@@ -966,7 +969,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT untuk tabel `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `provinces`
