@@ -8,21 +8,21 @@
     ],
     "license": "MIT",
     "require": {
-        "php" : "~7.3.0",
+        "php": "^7.4.1",
         "ext-curl": "*",
         "ext-gd": "*",
         "ext-json": "*",
         "doctrine/dbal": "^2.10",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
+        "fzaninotto/faker": "^1.9.1",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
         "laravel/helpers": "^1.2",
         "laravel/socialite": "^4.3",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
-        "veritrans/veritrans-php": "dev-master",
-        "fzaninotto/faker": "^1.9.1"
+        "veritrans/veritrans-php": "dev-master"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
