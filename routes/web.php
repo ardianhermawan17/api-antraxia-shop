@@ -32,9 +32,7 @@ Route::prefix('/admin')->group(function (){
     Route::get('/home', 'HomeController@index')->name('home');
 
     //login
-    Route::get('/', function (){
-        return view('auth.login');
-    });
+    Route::get('/', 'Admin\UserController@login')->name('auth.login');
 
     Route::match(["GET","POST"],"/register", function (){
         return redirect("/login");

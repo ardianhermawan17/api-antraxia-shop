@@ -15,9 +15,9 @@ use App\Http\Resources\Book as BookResource;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
 
 //ROute test
 

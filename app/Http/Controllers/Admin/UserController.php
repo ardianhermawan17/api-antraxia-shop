@@ -173,4 +173,9 @@ class UserController extends Controller
 
         return redirect()->route('users.index')->with('status','User successfully delete');
     }
+
+    public function logn()
+    {
+        return view('auth.login');
+    }
 }
